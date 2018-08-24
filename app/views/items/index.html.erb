@@ -1,58 +1,62 @@
-    <main role="main">
+<main role="main">
 
-      <section class="jumbotron text-center" style="background-image: url(<%= asset_path 'hero.jpg' %>);">
-       
-        <div class="container">
-          <h1 class="jumbotron-heading text-white">Faust Furniture</h1>
-          <p class="lead text-white">Used Furniture for all tastes.</p>
-        </div>
-      </section>
+  <section class="jumbotron text-center" style="background-image: url(<%= asset_path 'hero.jpg' %>);">
+    <div class="container">
+      <h1 class="jumbotron-heading text-white">Faust Furniture</h1>
+      <p class="lead text-white">Vintage Furniture for all tastes.</p>
+    </div>
+  </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-        <div class="row">
-          <% @items.each do |item| %>
-  
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-              
-                <% begin %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <% @items.each do |item| %>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <% begin %>
                 <%= image_tag(item.img_file) %>
-                <% rescue %>
-                <% end %>
-                <div class="card-body">
+              <% rescue %>
+              <% end %>
+              <div class="card-body">
                 <h4 class="text-center"><%= item.item %></h4>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <%= link_to 'View', item %>
-                    </div>
-                    <% if item.condition == 'good'%>
-                      
-                      <span class="text-success"><small class="text-muted">$<%= item.price %></small> $  <%= (0.9 *item.price.to_i).to_i  %></span>
-                    <% elsif item.condition == 'average'%>
-                      
-                      <span class="text-warning"> <small class="text-muted">$<%= item.price %></small> $  <%= (0.8 *item.price.to_i).to_i  %></span> 
-                    <% else %>
-                      <span class="text-primary">$  <%= item.price    %></span>                                            
-                    <% end %>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <%= link_to 'View', item %>
                   </div>
+                  <% if item.condition == 'good'%>
+                    <span class="text-success">
+                      <small class="text-muted">
+                        $<%= item.price %>
+                      </small> 
+                      $<%= (0.9 *item.price.to_i).to_i  %>
+                    </span>
+                  <% elsif item.condition == 'average'%>
+                    <span class="text-warning"> 
+                      <small class="text-muted">
+                        $<%= item.price %>
+                      </small> 
+                      $<%= (0.8 *item.price.to_i).to_i %>
+                    </span> 
+                  <% else %>
+                    <span class="text-primary">
+                      $<%= item.price %>
+                    </span>                                            
+                  <% end %>
                 </div>
               </div>
             </div>
-
-          <% end %>
           </div>
-        </div>
+        <% end %>
       </div>
+    </div>
+  </div>
+</main>
 
-    </main>
-
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
-      </div>
-    </footer>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>&copy; Faust Furniture</p>
+  </div>
+</footer>
