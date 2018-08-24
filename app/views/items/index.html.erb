@@ -28,14 +28,14 @@
                       <small class="text-muted">
                         $<%= item.price %>
                       </small> 
-                      $<%= (0.9 *item.price.to_i).to_i  %>
+                      $<%= (0.9 * item.price.to_i).to_i  %>
                     </span>
                   <% elsif item.condition == 'average'%>
                     <span class="text-warning"> 
                       <small class="text-muted">
                         $<%= item.price %>
                       </small> 
-                      $<%= (0.8 *item.price.to_i).to_i %>
+                      $<%= (0.8 * item.price.to_i).to_i %>
                     </span> 
                   <% else %>
                     <span class="text-primary">
