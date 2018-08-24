@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+CSV.foreach('/Users/cdhagmann/Documents/Momentum/project-w4-rails-small-business-cdhagmann/db/faust_inventory.csv', headers: true) do |row|
+  Item.create(row.to_h)
+end
